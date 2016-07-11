@@ -6,8 +6,7 @@
 
 [node name="lvl" type="Sprite" parent="."]
 
-transform/pos = Vector2( 45000, -7500 )
-transform/scale = Vector2( 15, 15 )
+transform/scale = Vector2( 2, 2 )
 z/z = -10
 texture = ExtResource( 1 )
 
