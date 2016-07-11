@@ -7,6 +7,7 @@ onready var anim_pl = get_node("AnimationPlayer")
 var dir #false - left; true = right
 var walk = false
 var walk_dir #false - left; true = right
+var trigger = false
 
 export var SPEED = 200
 
@@ -56,7 +57,15 @@ func _fixed_process(delta):
 	gg_controller(delta, mousepos)
 	
 		
-#	if dir != walk_dir and new_anim != "":
-#		new_anim = ""
-#	if dir == walk_dir and new_anim != "":
-#		new_anim = ""
+	if dir != walk_dir and trigger == false:
+		new_anim = ""
+		if dir == walk_dir:
+			trigger = false
+		else:
+			trigger = true
+	if dir == walk_dir and trigger == false:
+		new_anim = ""
+		if dir != walk_dir:
+			trigger = false
+		else:
+			trigger = true
